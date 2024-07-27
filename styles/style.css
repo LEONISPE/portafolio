@@ -1,0 +1,215 @@
+/**
+estas importaciones son tipos de letras que uno importa desde una pajina 
+**/
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+
+/**
+este root lo que hace es crear uns variables que guarde esos colores 
+ya que en caso de actualisacion no halla que cambiar el color en todos los css
+que tengamos, tambien funciona asi con las fuentes de letras 
+**/
+:root{
+--color-primario:#000000;
+--color-secundario:#F6F6F6;
+--color-terciario:#22D4FD;
+--color-hover: #272727;
+
+--fuente-monserrat: "Montserrat", sans-serif;
+--fuente-krona:"Krona One", sans-serif;
+}
+
+
+/**
+La propiedad padding es la que crea el espacio o área alrededor
+ del contenido de un elemento. Consiste en el relleno superior, derecho, inferior e izquierdo.
+ La principal diferencia entre el padding y el margin de CSS es que el padding es el espacio entre el contenido y el borde del elemento (dentro del 
+ propio elemento), mientras que el margin es el espacio alrededor del borde de un elemento.6/01/2023
+**/
+*{
+padding: 0;
+margin: 0;
+
+}
+
+/**
+bueno el background  es el color de fondo de la imagen 
+y el color son el color de las letras  box-sizing: border-box : Dice que el tamaño de caja se va a mantener estable, no importa si se le añade un padding,
+ el tamaño de caja se quedará con el tamaño indicado y el padding crecerá hacia adentro.
+**/
+body{
+
+    background-color:var(--color-primario);
+    color:var(--color-secundario);
+ 
+  box-sizing: border-box;
+
+}
+
+.header{
+padding: 2%  0%  0%  15%;
+}
+
+.header_menu{
+display: flex;
+gap: 80px;
+}
+
+/**
+vamos a cambiar el font size 24 px por el font siz2 1.5 rem , esto es para que se adapte al tipo de pantalla 
+y tambien el usuario quiere agrandar la pantalla pueda hacerlo ya que con los pixeles es estaticos
+**/
+.header_menu_link{
+font-family: var(--fuente-monserrat);
+font-size: 1.5rem;
+font-weight: 600;
+color: var(--color-terciario) ; 
+text-decoration: none; 
+}
+
+/**
+el display flex es para alinear el texto al centro de la panatalla 
+el align items tambien centra los textos al medio
+el margin es el zoom de la pantalla entre mas margin mas zoom va haber
+y el justify content es para que halla espacio entre la imagen y las letras
+**/
+.presentacion{
+display: flex;
+align-items: center;
+padding:  8% 15%;
+justify-content: space-between;
+gap: 82px;
+
+}
+
+/**
+el width es para que las letras vallan una arriba de la otra y que se ocupe bien 
+el esapacio de la pantalla
+el flex direcion column es para que el texto se aline de manera horizontal y no vertical
+y el gap es para que haya espacio entre las letras 
+**/
+.presentacion_contenido{
+width: 50%;
+display: flex;
+flex-direction: column;
+gap: 40px;
+
+}
+
+/**
+el font zize es el tamaño de la letra en este caso el titulo
+y el font famuly es el tipo de letra ya importado
+**/
+.presentacion_contenido_titulo{
+
+  font-size: 2.25rem;
+    font-family: var(--fuente-krona);
+}
+.titulo-destaque{
+
+    color: var(--color-terciario) ;   
+}
+
+
+.presentacion_contenido_texto{
+    font-family: var(--fuente-monserrat);
+    font-size: 1.5rem;
+}
+
+.presentacion_enlaces{
+display: flex;
+justify-content: space-between;
+flex-direction: column;
+align-items: center;
+gap: 32px;
+
+}
+
+/**
+La propiedad font-weight de CSS especifica el peso o grueso de la letra. 
+**/
+.presentacion_enlaces_subtitulo{
+ font-family: var(--fuente-krona);
+ font-size: 1.5rem;
+ font-weight: 400;   
+}
+/**
+el border radius es el grado de radios que uno quiera para los bordes
+text decoration es si uno quiere decoracion al texto 
+tambien cambiamos el width para que los botos de istagram e github se adapten
+**/
+.presentacion_enlaces_link{
+    justify-content: center;
+    width: 50%;
+    text-align: center;
+    padding: 21.5px 0;
+    border-radius: 8px;
+    font-family: var(--fuente-monserrat);
+    font-size: 1.5rem;
+     font-weight: 600;
+     text-decoration: none;
+     color: var(--color-secundario);
+     border: 2px solid  var(--color-terciario);
+    gap: 10px;
+     display: flex
+     
+     
+}
+/**
+esta funcion lo que hace es cuando ponemos el cursor cambiara de color
+**/
+.presentacion_enlaces_link:hover{
+background-color: var(--color-hover);
+}
+
+/**
+esta calse es para que la imagen se adapte  a las diferentes pantallas 
+y que si una imagen es mas o menor las palabras se adapten a ella
+**/
+.presentacion_imagen{
+width: 50%;
+
+}
+
+.footer{
+    background-color: var(--color-terciario);
+    padding: 24px;
+    color: var(--color-primario);
+    text-align: center;
+    font-family: var(--fuente-monserrat);
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+
+/**
+esta clase es para que cuando la imagen este menos de 1200px 
+cambie  para arriba  eso para que se adapte
+aparte el header con el padding es para que el about me y el home 
+se vallan mas arriba para que no choquencon la imagen
+y el justify es para centralizar el about me y el home,es todo
+**/
+@media(max-width: 1200px){
+
+
+    .header{
+
+        padding: 10%;
+    }
+
+    .header_menu{
+
+        justify-content: center;
+    }
+    .presentacion{
+
+        flex-direction: column-reverse;
+        padding: 5%;
+
+    }
+    .presentacion_contenido{
+        width: auto;
+    }
+}
